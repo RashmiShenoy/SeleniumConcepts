@@ -29,6 +29,8 @@ public class BootstrapDropDown {
 				break;
 			}
 		}
+		
+		driver.quit();
 
 	}
 
