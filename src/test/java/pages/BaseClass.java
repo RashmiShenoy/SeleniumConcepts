@@ -49,10 +49,10 @@ public class BaseClass {
 	}
 	
 	@AfterMethod
-	public void tearDownMethod(ITestResult result) {
+	public void tearDownMethod(ITestResult result) throws IOException {
 		if(result.getStatus() == ITestResult.FAILURE) {
 			logger.fail("Test failed", MediaEntityBuilder.createScreenCaptureFromPath
-					(Helper.captureScreenshot(driver)).build());)
+					(Helper.captureScreenshot(driver)).build());
 		}
 		
 		else if(result.getStatus() == ITestResult.SUCCESS) {
